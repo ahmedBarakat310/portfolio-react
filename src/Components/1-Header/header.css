@@ -1,0 +1,408 @@
+header.flex {
+  justify-content: space-between;
+  padding: 0 2.4rem;
+  margin-top: 1.2rem;
+}
+
+header.flex nav {
+  background-color: var(--bgHeader);
+  padding: 0.77rem 1.6rem;
+  border-radius: 55px;
+  box-shadow: 1px 1px 40px #2323242a;
+}
+
+header ul.flex {
+  gap: 16px;
+}
+
+header ul li a,
+ ul li button {
+  color: var(--title);
+  opacity: 0.9;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+header ul li a:hover,
+ ul li button:hover {
+  color: var(--blue);
+  opacity: 1;
+  font-size: 0.9rem;
+}
+
+header button {
+  font-size: 1.2rem;
+}
+
+header button.menu {
+  display: none;
+}
+
+/* ========================
+      2. Button & icon
+  =========================== */
+.closeCvIcon {
+  position: fixed;
+
+  right: 20px;
+  top: 20px;
+}
+header .icon-menu,
+header button.mode {
+  background-color: var(--bgHeader);
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+
+  justify-content: center;
+  text-align: center;
+
+  color: var(--subtitle);
+  border: 1px solid rgba(244, 165, 96, 0.249);
+  transition: 0.2s;
+}
+header .icon-sun {
+  color: orange;
+  box-shadow: 1px 1px 40px rgba(35, 35, 36, 0.165);
+}
+header .icon-menu:hover,
+header button.mode:hover {
+  color: var(--title);
+  border: 1px solid rgb(244, 165, 96);
+}
+
+ .icon-close {
+  font-size: 1.5rem;
+  color: var(--subtitle);
+  transition: 0.3s;
+}
+
+ .icon-close:hover {
+  font-size: 1.7rem;
+  color: crimson;
+  rotate: 180deg;
+}
+
+/* ========================
+      3- Modal == pop up
+  =========================== */
+ .fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 11;
+  background-color: rgba(40, 40, 48, 0.91);
+
+  /* filter: blur(8px); */
+  backdrop-filter: blur(4px);
+}
+
+@keyframes mymove {
+  0% {
+    scale: 0;
+  }
+
+  60% {
+    scale: 1.2;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+header .fixed ul.modal {
+  animation: mymove 0.77s 1;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--secondary);
+}
+
+header .fixed ul.modal li {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.77rem;
+  padding-top: 0.5rem;
+}
+
+header .fixed ul.modal li:first-child {
+  text-align: right;
+  border: none;
+  padding-bottom: 0;
+  padding-top: 0.2rem;
+  margin-bottom: -1rem;
+}
+
+header .fixed ul.modal li:last-child {
+  border: none;
+}
+
+header .fixed ul.modal li a {
+  font-size: 1rem;
+}
+
+/* =====================================
+    4- Responsive Design (media query)
+  ======================================== */
+@media (max-width: 700px) {
+  header.flex nav {
+    display: none;
+  }
+
+  header button.menu {
+    display: block;
+  }
+}
+
+.fixed.cv {
+  overflow-y: scroll;
+}
+/* cv model */
+.cvModel {
+  background-color: #fff;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 5px;
+  padding: 40px 70px;
+  color: black;
+  animation: popUp 0.8s 1;
+}
+@keyframes popUp {
+  0%{
+    scale: 0;
+  }
+  50%{
+    scale: 1.05;
+  }
+  100%{
+    scale: 1;
+  }
+}
+.cvModel .cv-heading {
+  text-align: center;
+  margin-top: 10px;
+}
+.cvModel .cv-heading h4 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.cv-contact {
+  margin: 20px 50px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 18px;
+  color: rgb(58, 58, 58);
+}
+.cv-contact div span {
+  margin: 0 3px;
+}
+
+.cv-summary .summary-description {
+  color: rgb(58, 58, 58);
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+.cv-summary .bold {
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 900;
+}
+.cv-education {
+  justify-content: space-between;
+}
+.cv-education .left .bold {
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+.cv-education .left p {
+  color: rgb(58, 58, 58);
+  text-transform: capitalize;
+}
+.cv-education .right {
+  color: rgb(58, 58, 58);
+}
+.cv-education .right span {
+  display: inline-block;
+  margin-bottom: 3px;
+}
+.cv-skills {
+  margin-left: 17px;
+}
+.cv-skills ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cv-skills ul li {
+  position: relative;
+  color: rgb(58, 58, 58);
+}
+
+.cv-skills ul li::before {
+  position: absolute;
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: black;
+  border-radius: 50%;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.cv-language span {
+  width: 50%;
+  color: rgb(58, 58, 58);
+}
+.cv-projects a span.bold {
+  margin-right: 2px;
+  font-weight: 700;
+}
+.cv-projects p {
+  color: rgb(58, 58, 58);
+  text-transform: capitalize;
+  margin-top: 4px;
+}
+.download-cv a{
+  background-color: #fff;
+  color: black;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  }
+  .download-cv a:hover{
+  background-color: #ececec;
+  
+  }
+  
+  .download-cv{
+    width: 70%;
+    margin: 30px auto;
+  
+    
+  }
+@media (max-width: 715px) {
+  .cvModel .cv-heading h1 {
+    font-size: 25px;
+  }
+  .cv-contact {
+    margin: 20px 10px;
+
+    justify-content: flex-start;
+  }
+
+  .cv-summary .summary-description {
+    color: rgb(58, 58, 58);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    text-transform: capitalize;
+  }
+
+
+  .cv-education{
+    justify-content: space-between;
+    gap: 10px;
+    align-items: start;
+   }
+   .cv-education .left .bold{
+  
+  font-size: 16px;
+   }
+   .cv-education .left p{
+    color: rgb(58, 58, 58);
+  text-transform: capitalize;
+   }
+   .cv-education .right {
+    color: rgb(58, 58, 58);
+  
+  
+   }
+  .cv-education .right span{
+    display:  inline-block;
+    margin-bottom: 3px;
+  }
+  .cvModel{
+    
+    width: 80%;
+   
+    padding: 40px 50px;
+    
+  }
+  .download-cv{
+    width: 80%;}
+ 
+}
+
+@media (max-width: 500px) {
+  
+  .cvModel{
+    
+    width: 90%;
+   
+    padding: 40px 40px;
+    
+  }
+  .download-cv{
+    width: 90%;}
+ 
+  .cvModel .cv-heading h1 {
+    font-size: 18px;
+    font-weight: bolder;
+    
+  }
+  .cvModel .cv-heading h4{
+    margin-top: 10px;
+    font-size: 14px;
+    
+  }
+  .cv-contact {
+    margin: 20px 0;
+
+display: flex;flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cv-summary .summary-description {
+    color: rgb(58, 58, 58);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    text-transform: capitalize;
+  }
+
+
+  .cv-education{
+    justify-content: space-between;
+    gap: 10px;
+    align-items: start;
+   }
+   .cv-education .left .bold{
+  
+  font-size: 16px;
+   }
+   .cv-education .left p{
+    color: rgb(58, 58, 58);
+  text-transform: capitalize;
+   }
+   .cv-education .right {
+    color: rgb(58, 58, 58);
+  
+  
+   }
+  .cv-education .right span{
+    display:  inline-block;
+    margin-bottom: 3px;
+  }
+}
+

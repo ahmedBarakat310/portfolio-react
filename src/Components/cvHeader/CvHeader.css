@@ -1,0 +1,17 @@
+.cv-header{
+margin: 20px 0;
+}
+.cv-header .cv-parts{
+    padding: 7px 0;
+}
+.cv-header .cv-parts .icon{
+    font-size: 25px;
+}
+.black-border{
+    border: 2.3px solid black;
+}
+.cv-header .cv-parts .title{
+    font-size: 20px ;
+    font-family: sans-serif;
+    font-weight: 600;
+}
